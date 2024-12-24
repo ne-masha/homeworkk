@@ -3,7 +3,7 @@ index_ = 0
 
 while index_ < len(my_list):
     num = my_list[index_]
-    index_ = index_ + 1 #берем число из списка чей инлекс (x+1)
+    index_ = index_ + 1 #берем число из списка чей инлекс (x + 1)
     if num == 0:
         continue
     elif num < 0:
