@@ -1,0 +1,36 @@
+count = 0
+
+def func(*data):
+    global count
+    for i in data:
+        if isinstance(i, int):
+            count += i
+        elif isinstance(i, str):
+            count += len(str)
+        elif isinstance(i, (list, tuple)):
+            func(data)
+        elif isinstance(i, dict):
+            for k, v in i.items():
+                func(k)
+                func(v)
+        return count
+
+data = [
+
+[1, 2, 3],
+
+{'a': 4, 'b': 5},
+
+(6, {'cube': 7, 'drum': 8}),
+
+"Hello",
+
+((), [{(2, 'Urban', ('Urban2', 35))}])
+
+]
+
+
+
+result = func(data)
+
+print(result)
