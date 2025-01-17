@@ -1,9 +1,30 @@
-key = int(input('Введите чисkо от 3 до 20: '))
-k = 0
+class House:
 
-for i in range(1, 10):
-    for k in range (1, 10):
-        if key % (i + k) == 0 and i < k and i != k:
-            result = [i, k]
+    def __init__(self, name, number_of_floors):
+        self.name = name
+        self.number_of_floors = number_of_floors
 
-            print(result)
+    def go_to(self, new_floor):
+        if new_floor < 1 or new_floor > self.number_of_floors:
+            print('Такого этажа не существут')
+        else:
+            new_floor += 1
+            for i in range(1, new_floor):
+                print(i)
+
+    def __len__(self):
+        return self.number_of_floors
+
+    def __str__(self):
+        return f'Название: {self.name}, кол-во этажей: {self.number_of_floors}'
+
+h1 = House('ЖК Горский', 2)
+h2 = House('Домик в деревне', 2)
+
+# __len__
+print(len(h1))
+print(len(h2))
+
+# # __str__
+print(h1)
+print(h2)
